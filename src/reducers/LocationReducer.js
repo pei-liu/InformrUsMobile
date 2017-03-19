@@ -1,8 +1,8 @@
 import {
-  STREET_ADDRESS_CHANGED,
-  CITY_CHANGED,
-  STATE_CHANGED,
-  ZIP_CODE_CHANGED
+  STREET_INPUT_CHANGED,
+  CITY_INPUT_CHANGED,
+  STATE_INPUT_CHANGED,
+  ZIP_INPUT_CHANGED
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -14,13 +14,13 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case STREET_ADDRESS_CHANGED:
+  case STREET_INPUT_CHANGED:
     return { ...state, streetAddressValue: action.payload };
-  case CITY_CHANGED:
+  case CITY_INPUT_CHANGED:
     return { ...state, cityValue: action.payload };
-  case STATE_CHANGED:
+  case STATE_INPUT_CHANGED:
     return { ...state, stateValue: action.payload };
-  case ZIP_CODE_CHANGED:
+  case ZIP_INPUT_CHANGED:
     return { ...state, zipCodeValue: action.payload };
   default:
     return state;
