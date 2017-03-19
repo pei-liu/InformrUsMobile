@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import { connect } from 'react-redux';
 
 import { Card, CardSection, Input, Button, Spinner } from './common';
+import {
+  streetAddressChanged
+} from '../actions';
 
 class AddressForm extends Component {
+  onStreetAddressChange(address) {
+    this.props.streetAddressChanged(address);
+  }
+
   render() {
+    const {
+      streetAddressValue,
+      cityValue,
+      stateValue,
+      zipCodeValue,
+    } = this.props;
+
     return (
       <Card>
         <CardSection>
-          <Text> Hello </Text>
-          <Text>{this.props.streetAddressValue}</Text>
+          <Input
+            label='Street Address'
+            value={streetAddressValue}
+            placeholder='31 Winslow Street'
+            onChangeText={input => this.onStreetAddressChange(input)}
+          />
         </CardSection>
       </Card>
     );
@@ -33,4 +50,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {})(AddressForm);
+export default connect(mapStateToProps, {
+  streetAddressChanged
+})(AddressForm);

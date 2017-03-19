@@ -6,7 +6,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  streetAddressValue: '31 Winslow St. from LocationReducer',
+  streetAddressValue: '',
   cityValue: '',
   stateValue: '',
   zipCodeValue: '',
