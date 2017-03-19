@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class AddressForm extends Component {
+import { Card, CardSection, Input, Button, Spinner } from './common';
+
+class AddressForm extends Component {
   render() {
     return (
-      <View>
-        <Text>AddressForm</Text>
-      </View>
+      <Card>
+        <CardSection>
+          <Text> Hello </Text>
+          <Text>{this.props.inputFieldStreetAddress}</Text>
+        </CardSection>
+      </Card>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  const {
+    inputFieldStreetAddress,
+    inputFieldCity,
+    inputFieldState,
+    inputFieldZipCode
+  } = state.location;
+
+  return {
+    inputFieldStreetAddress,
+    inputFieldCity,
+    inputFieldState,
+    inputFieldZipCode
+  };
+};
+
+export default connect(mapStateToProps, {})(AddressForm);
