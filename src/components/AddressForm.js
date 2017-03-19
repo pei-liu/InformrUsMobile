@@ -10,7 +10,7 @@ class AddressForm extends Component {
       <Card>
         <CardSection>
           <Text> Hello </Text>
-          <Text>{this.props.inputFieldStreetAddress}</Text>
+          <Text>{this.props.streetAddressValue}</Text>
         </CardSection>
       </Card>
     );
@@ -19,17 +19,17 @@ class AddressForm extends Component {
 
 const mapStateToProps = (state) => {
   const {
-    inputFieldStreetAddress,
-    inputFieldCity,
-    inputFieldState,
-    inputFieldZipCode
+    streetAddressValue,
+    cityValue,
+    stateValue,
+    zipCodeValue
   } = state.location;
 
   return {
-    inputFieldStreetAddress,
-    inputFieldCity,
-    inputFieldState,
-    inputFieldZipCode
+    streetAddressValue,
+    cityValue,
+    stateValue,
+    zipCodeValue
   };
 };
 

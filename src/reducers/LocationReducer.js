@@ -6,22 +6,22 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  inputFieldStreetAddress: '31 Winslow St. from LocationReducer',
-  inputFieldCity: '',
-  inputFieldState: '',
-  inputFieldZipCode: '',
+  streetAddressValue: '31 Winslow St. from LocationReducer',
+  cityValue: '',
+  stateValue: '',
+  zipCodeValue: '',
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case STREET_ADDRESS_CHANGED:
-    return { ...state, inputFieldStreetAddress: action.payload };
+    return { ...state, streetAddressValue: action.payload };
   case CITY_CHANGED:
-    return { ...state, inputFieldCity: action.payload };
+    return { ...state, cityValue: action.payload };
   case STATE_CHANGED:
-    return { ...state, inputFieldState: action.payload };
+    return { ...state, stateValue: action.payload };
   case ZIP_CODE_CHANGED:
-    return { ...state, inputFieldZipCode: action.payload };
+    return { ...state, zipCodeValue: action.payload };
   default:
     return state;
   }
