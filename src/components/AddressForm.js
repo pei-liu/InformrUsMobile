@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
+import Hr from 'react-native-hr';
 
 import {
   Card,
@@ -14,7 +15,8 @@ import {
   cityInputChanged,
   stateInputChanged,
   zipInputChanged,
-  searchAddress
+  searchAddress,
+  getCurrentLocation
 } from '../actions';
 
 class AddressForm extends Component {
@@ -34,7 +36,7 @@ class AddressForm extends Component {
     this.props.zipInputChanged(zip);
   }
 
-  onButtonPress() {
+  onAddressSubmit() {
     const {
       streetAddressValue,
       cityValue,
@@ -50,17 +52,31 @@ class AddressForm extends Component {
     });
   }
 
+  onUseCurrLocationPress() {
+    this.props.getCurrentLocation();
+  }
+
   generateUsStatesForPicker() {
     return this.props.statesList.map(stateItem => {
       return { key: stateItem.abbreviation, label: stateItem.name };
     });
   }
 
-  renderButton() {
+  renderAddressSubmitButton() {
     return (
       <View style={style.buttonContainerStyle}>
-        <Button onPress={this.onButtonPress.bind(this)}>
+        <Button onPress={this.onAddressSubmit.bind(this)}>
           Search Address
+        </Button>
+      </View>
+    );
+  }
+
+  renderUseCurrLocationButton() {
+    return (
+      <View style={style.buttonContainerStyle}>
+        <Button onPress={this.onUseCurrLocationPress.bind(this)}>
+          Use Current Location
         </Button>
       </View>
     );
@@ -75,7 +91,7 @@ class AddressForm extends Component {
     } = this.props;
 
     return (
-      <View>
+      <View style={{marginTop: 20}}>
         <Card>
           <CardSection>
             <Input
@@ -108,10 +124,16 @@ class AddressForm extends Component {
               value={zipCodeValue}
               placeholder='06459'
               onChangeText={input => this.onZipValueChange(input)}
+              keyboardType='numeric'
             />
           </CardSection>
         </Card>
-        { this.renderButton() }
+
+        <View style={{ marginTop: 20 }}>
+          { this.renderAddressSubmitButton() }
+          <Hr text='or' lineColor='#A0A0A0' textColor='#A0A0A0' />
+          { this.renderUseCurrLocationButton() }
+        </View>
       </View>
     );
   }
@@ -151,7 +173,8 @@ const actions = {
   cityInputChanged,
   stateInputChanged,
   zipInputChanged,
-  searchAddress
+  searchAddress,
+  getCurrentLocation
 };
 
 export default connect(mapStateToProps, actions)(AddressForm);

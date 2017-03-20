@@ -39,3 +39,10 @@ export const searchAddress = ({ streetAddressValue, cityValue, stateValue, zipCo
     type: 'do nothing'
   }
 }
+
+export const getCurrentLocation = () => {
+  console.log('Get Current Location Pressed');
+  return {
+    type: 'do nothing'
+  }
+}
