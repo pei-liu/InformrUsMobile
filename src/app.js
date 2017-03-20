@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
 
 import reducers from './reducers';
 import Router from './router';
@@ -12,7 +13,7 @@ class App extends Component {
 
     // NOTE: DO NOT RAP <Router> IN <View> TAGS. It messes up the styling
     // with the Router.
-    const store = createStore(reducers, {}, applyMiddleware());
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
         <Router />
