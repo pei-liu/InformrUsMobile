@@ -15,8 +15,8 @@ import {
   cityInputChanged,
   stateInputChanged,
   zipInputChanged,
-  searchAddress,
-  getCurrentLocation
+  fetchOfficialsWithAddressForm,
+  fetchOfficialsWithCurrentLocation
 } from '../actions';
 
 class AddressForm extends Component {
@@ -44,7 +44,7 @@ class AddressForm extends Component {
       zipCodeValue
     } = this.props;
 
-    this.props.searchAddress({
+    this.props.fetchOfficialsWithAddressForm({
       streetAddressValue,
       cityValue,
       stateValue,
@@ -53,7 +53,7 @@ class AddressForm extends Component {
   }
 
   onUseCurrLocationPress() {
-    this.props.getCurrentLocation();
+    this.props.fetchOfficialsWithCurrentLocation();
   }
 
   generateUsStatesForPicker() {
@@ -173,8 +173,8 @@ const actions = {
   cityInputChanged,
   stateInputChanged,
   zipInputChanged,
-  searchAddress,
-  getCurrentLocation
+  fetchOfficialsWithAddressForm,
+  fetchOfficialsWithCurrentLocation
 };
 
 export default connect(mapStateToProps, actions)(AddressForm);
