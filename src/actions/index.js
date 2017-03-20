@@ -34,43 +34,50 @@ export const zipInputChanged = (zipCode) => {
   };
 };
 
-export const searchAddress = ({ streetAddressValue, cityValue, stateValue, zipCodeValue }) => {
+export const fetchOfficialsWithAddressForm = ({ streetAddressValue, cityValue, stateValue, zipCodeValue }) => {
   const address = `${streetAddressValue} ${cityValue}, ${stateValue.key} ${zipCodeValue}`;
   const apiKey = 'AIzaSyAalrWHw-aemMa2n3Ou6T3isuVzeHtTBgI';
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`;
   return (dispatch) => {
     fetch(url)
       .then(response => { return response.json(); })
-      .then(({ results }) => { handleFetchGeocodeSuccess(dispatch, results); })
+      .then(({ results }) => { fetchGeocodeSuccess(dispatch, results); })
       .catch((error) => { console.log(error); });
   };
 };
 
-export const getCurrentLocation = () => {
-  console.log('Get Current Location Pressed');
-  return {
-    type: 'do nothing'
+export const fetchOfficialsWithCurrentLocation = () => {
+  return (dispatch) => {
+    navigator.geolocation.getCurrentPosition(
+      (location) => {
+        const { latitude, longitude } = location.coords;
+        getOfficials(dispatch, latitude, longitude);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   };
 };
 
-const handleFetchGeocodeSuccess = (dispatch, results) => {
-  const coordinates = results[0].geometry.location;
-  getOfficials(dispatch, coordinates);
+const fetchGeocodeSuccess = (dispatch, results) => {
+  const coords = results[0].geometry.location;
+  getOfficials(dispatch, coords.lat, coords.lng);
 };
 
-const getOfficials = (dispatch, coordinates) => {
-  const url = `https://informr.us/geolookup/${coordinates.lat}&/${coordinates.lng}`;
+const getOfficials = (dispatch, lat, lng) => {
+  const url = `https://informr.us/geolookup/${lat}&/${lng}`;
   fetch(url)
     .then(response => { return response.json(); })
     .then(responseJSON => {
-      handleGetOfficialsSuccess(dispatch, responseJSON);
+      fetchOfficialsSuccess(dispatch, responseJSON);
     })
     .catch(error => {
       console.log(error);
     });
 };
 
-const handleGetOfficialsSuccess = (dispatch, officials) => {
+const fetchOfficialsSuccess = (dispatch, officials) => {
   dispatch({
     type: FETCHED_OFFICIALS,
     payload: officials
