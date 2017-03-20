@@ -1,6 +1,8 @@
 {
   "name": "InformrUsMobile",
+  "author": "Pei Xiong Liu",
   "version": "0.0.1",
+  "description": "An application that lets people learn about their state legislators.",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
