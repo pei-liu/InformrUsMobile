@@ -32,3 +32,10 @@ export const zipInputChanged = (zipCode) => {
     payload: zipCode
   };
 };
+
+export const searchAddress = ({ streetAddressValue, cityValue, stateValue, zipCodeValue}) => {
+  console.log(`Submitted address ${streetAddressValue} ${cityValue}, ${stateValue.abbreviation} ${zipCodeValue}`)
+  return {
+    type: 'do nothing'
+  }
+}
