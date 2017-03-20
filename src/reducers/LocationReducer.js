@@ -4,8 +4,10 @@ import {
   STATE_INPUT_CHANGED,
   ZIP_INPUT_CHANGED
 } from '../actions/types';
+import statesList from '../UsStates.json';
 
 const INITIAL_STATE = {
+  statesList,
   streetAddressValue: '',
   cityValue: '',
   stateValue: '',

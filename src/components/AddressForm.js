@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Card, CardSection, Input, Button, Spinner } from './common';
+import {
+  Card,
+  CardSection,
+  Input,
+  ModalPicker
+} from './common';
 import {
   streetInputChanged,
   cityInputChanged,
@@ -18,12 +23,18 @@ class AddressForm extends Component {
     this.props.cityInputChanged(city);
   }
 
-  onStateValueChange(stateVal) {
-    this.props.stateInputChanged(stateVal);
+  onStateValueChange(stateValue) {
+    this.props.stateInputChanged(stateValue);
   }
 
   onZipValueChange(zip) {
     this.props.zipInputChanged(zip);
+  }
+
+  generateUsStatesForPicker() {
+    return this.props.statesList.map(stateItem => {
+      return { key: stateItem.abbreviation, label: stateItem.name };
+    });
   }
 
   render() {
@@ -53,11 +64,12 @@ class AddressForm extends Component {
           />
         </CardSection>
         <CardSection>
-          <Input
+          <ModalPicker
+            value={stateValue.label}
             label='State'
-            value={stateValue}
-            placeholder='CT'
-            onChangeText={input => this.onStateValueChange(input)}
+            pickerOptions={this.generateUsStatesForPicker()}
+            onValueChange={this.onStateValueChange.bind(this)}
+            placeholder='Connecticut'
           />
         </CardSection>
         <CardSection>
@@ -78,14 +90,16 @@ const mapStateToProps = (state) => {
     streetAddressValue,
     cityValue,
     stateValue,
-    zipCodeValue
+    zipCodeValue,
+    statesList
   } = state.location;
 
   return {
     streetAddressValue,
     cityValue,
     stateValue,
-    zipCodeValue
+    zipCodeValue,
+    statesList
   };
 };
 
