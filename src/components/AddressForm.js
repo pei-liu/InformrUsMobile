@@ -58,7 +58,7 @@ class AddressForm extends Component {
 
   generateUsStatesForPicker() {
     return this.props.statesList.map(stateItem => {
-      return { key: stateItem.abbreviation, label: stateItem.name };
+      return { key: stateItem.key, label: stateItem.label };
     });
   }
 
@@ -91,7 +91,7 @@ class AddressForm extends Component {
     } = this.props;
 
     return (
-      <View style={{marginTop: 20}}>
+      <View style={{ marginTop: 20 }}>
         <Card>
           <CardSection>
             <Input
