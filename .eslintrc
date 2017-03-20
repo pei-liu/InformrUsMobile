@@ -5,6 +5,7 @@
   },
   "globals": {
     "fetch": false,
-    "dispatch": false
+    "dispatch": false,
+    "navigator": false
   }
 }
