@@ -1,6 +1,8 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
+
 import AddressForm from './components/AddressForm';
+import OfficialsList from './components/OfficialsList';
 
 const RouterComponent = () => {
   return (
@@ -8,6 +10,7 @@ const RouterComponent = () => {
     <Router sceneStyle={{ marginTop: 60 }}>
       <Scene key="root">
         <Scene key="addressForm" component={AddressForm} title="Address Form" />
+        <Scene key="officialsList" component={OfficialsList} title="Your Reps" initial={true} />
       </Scene>
     </Router>
   );
