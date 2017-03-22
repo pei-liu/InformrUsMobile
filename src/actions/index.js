@@ -1,3 +1,5 @@
+import { Actions } from 'react-native-router-flux';
+
 import {
   STREET_INPUT_CHANGED,
   CITY_INPUT_CHANGED,
@@ -82,4 +84,5 @@ const fetchOfficialsSuccess = (dispatch, officials) => {
     type: FETCHED_OFFICIALS,
     payload: officials
   });
+  Actions.officialsList();
 };
