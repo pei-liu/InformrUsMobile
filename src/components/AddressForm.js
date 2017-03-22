@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Hr from 'react-native-hr';
 
@@ -17,10 +17,24 @@ import {
   stateInputChanged,
   zipInputChanged,
   fetchOfficialsWithAddressForm,
-  fetchOfficialsWithCurrentLocation
+  fetchOfficialsWithCurrentLocation,
+  clearAddressFormError,
 } from '../actions';
 
 class AddressForm extends Component {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errorMessage) {
+      Alert.alert(
+        'Error',
+        nextProps.errorMessage,
+        [
+          { text: 'OK', onPress: this.props.clearAddressFormError }
+        ],
+        { cancelable: false }
+      );
+    }
+  }
+
   onStreetValueChange(street) {
     this.props.streetInputChanged(street);
   }
@@ -171,7 +185,8 @@ const mapStateToProps = (state) => {
     stateValue,
     zipCodeValue,
     statesList,
-    isLoading
+    isLoading,
+    errorMessage
   } = state.location;
 
   return {
@@ -180,7 +195,8 @@ const mapStateToProps = (state) => {
     stateValue,
     zipCodeValue,
     statesList,
-    isLoading
+    isLoading,
+    errorMessage
   };
 };
 
@@ -190,7 +206,8 @@ const actions = {
   stateInputChanged,
   zipInputChanged,
   fetchOfficialsWithAddressForm,
-  fetchOfficialsWithCurrentLocation
+  fetchOfficialsWithCurrentLocation,
+  clearAddressFormError
 };
 
 export default connect(mapStateToProps, actions)(AddressForm);

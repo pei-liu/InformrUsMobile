@@ -7,7 +7,9 @@ import {
   ZIP_INPUT_CHANGED,
   FETCHED_OFFICIALS,
   OFFICIALS_LOOKUP_START,
-  OFFICIALS_LOOKUP_SUCCESS
+  OFFICIALS_LOOKUP_SUCCESS,
+  OFFICIALS_LOOKUP_FAIL,
+  CLEAR_ADDRESS_FORM_ERROR
 } from './types';
 
 export const streetInputChanged = (street) => {
@@ -38,6 +40,10 @@ export const zipInputChanged = (zipCode) => {
   };
 };
 
+export const clearAddressFormError = () => {
+  return { type: CLEAR_ADDRESS_FORM_ERROR };
+};
+
 export const fetchOfficialsWithAddressForm = ({ streetAddressValue, cityValue, stateValue, zipCodeValue }) => {
   const address = `${streetAddressValue} ${cityValue}, ${stateValue.key} ${zipCodeValue}`;
   const apiKey = 'AIzaSyAalrWHw-aemMa2n3Ou6T3isuVzeHtTBgI';
@@ -47,7 +53,9 @@ export const fetchOfficialsWithAddressForm = ({ streetAddressValue, cityValue, s
     fetch(url)
       .then(response => { return response.json(); })
       .then(({ results }) => { fetchGeocodeSuccess(dispatch, results); })
-      .catch((error) => { console.log(error); });
+      .catch((error) => {
+        fetchOfficialsFail(dispatch, error);
+      });
   };
 };
 
@@ -60,7 +68,7 @@ export const fetchOfficialsWithCurrentLocation = () => {
         getOfficials(dispatch, latitude, longitude);
       },
       (error) => {
-        console.log(error);
+        fetchOfficialsFail(dispatch, error);
       }
     );
   };
@@ -72,14 +80,14 @@ const fetchGeocodeSuccess = (dispatch, results) => {
 };
 
 const getOfficials = (dispatch, lat, lng) => {
-  const url = `https://informr.us/geolookup/${lat}&/${lng}`;
+  const url = `https://ixnformr.us/geolookup/${lat}&/${lng}`;
   fetch(url)
     .then(response => { return response.json(); })
     .then(responseJSON => {
       fetchOfficialsSuccess(dispatch, responseJSON);
     })
     .catch(error => {
-      console.log(error);
+      fetchOfficialsFail(dispatch, error);
     });
 };
 
@@ -90,4 +98,14 @@ const fetchOfficialsSuccess = (dispatch, officials) => {
   });
   dispatch({ type: OFFICIALS_LOOKUP_SUCCESS });
   Actions.officialsList();
+};
+
+const fetchOfficialsFail = (dispatch, error) => {
+  console.log(error);
+  dispatch({
+    type: OFFICIALS_LOOKUP_FAIL,
+    payload: {
+      errorMessage: 'Oops, something went wrong. Please try again later.'
+    }
+  });
 };
