@@ -8,7 +8,8 @@ import {
   CardSection,
   Input,
   ModalPicker,
-  Button
+  Button,
+  Spinner
 } from './common';
 import {
   streetInputChanged,
@@ -60,6 +61,24 @@ class AddressForm extends Component {
     return this.props.statesList.map(stateItem => {
       return { key: stateItem.key, label: stateItem.label };
     });
+  }
+
+  renderControls() {
+    if (this.props.isLoading) {
+      return (
+        <View style={{ marginTop: 40 }}>
+          <Spinner />
+        </View>
+      );
+    }
+
+    return (
+      <View style={{ marginTop: 20 }}>
+        { this.renderAddressSubmitButton() }
+        <Hr text='or' lineColor='#A0A0A0' textColor='#A0A0A0' />
+        { this.renderUseCurrLocationButton() }
+      </View>
+    );
   }
 
   renderAddressSubmitButton() {
@@ -128,12 +147,7 @@ class AddressForm extends Component {
             />
           </CardSection>
         </Card>
-
-        <View style={{ marginTop: 20 }}>
-          { this.renderAddressSubmitButton() }
-          <Hr text='or' lineColor='#A0A0A0' textColor='#A0A0A0' />
-          { this.renderUseCurrLocationButton() }
-        </View>
+        { this.renderControls() }
       </View>
     );
   }
@@ -156,7 +170,8 @@ const mapStateToProps = (state) => {
     cityValue,
     stateValue,
     zipCodeValue,
-    statesList
+    statesList,
+    isLoading
   } = state.location;
 
   return {
@@ -164,7 +179,8 @@ const mapStateToProps = (state) => {
     cityValue,
     stateValue,
     zipCodeValue,
-    statesList
+    statesList,
+    isLoading
   };
 };
 

@@ -5,7 +5,9 @@ import {
   CITY_INPUT_CHANGED,
   STATE_INPUT_CHANGED,
   ZIP_INPUT_CHANGED,
-  FETCHED_OFFICIALS
+  FETCHED_OFFICIALS,
+  OFFICIALS_LOOKUP_START,
+  OFFICIALS_LOOKUP_SUCCESS
 } from './types';
 
 export const streetInputChanged = (street) => {
@@ -41,6 +43,7 @@ export const fetchOfficialsWithAddressForm = ({ streetAddressValue, cityValue, s
   const apiKey = 'AIzaSyAalrWHw-aemMa2n3Ou6T3isuVzeHtTBgI';
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`;
   return (dispatch) => {
+    dispatch({ type: OFFICIALS_LOOKUP_START });
     fetch(url)
       .then(response => { return response.json(); })
       .then(({ results }) => { fetchGeocodeSuccess(dispatch, results); })
@@ -50,6 +53,7 @@ export const fetchOfficialsWithAddressForm = ({ streetAddressValue, cityValue, s
 
 export const fetchOfficialsWithCurrentLocation = () => {
   return (dispatch) => {
+    dispatch({ type: OFFICIALS_LOOKUP_START });
     navigator.geolocation.getCurrentPosition(
       (location) => {
         const { latitude, longitude } = location.coords;
@@ -84,5 +88,6 @@ const fetchOfficialsSuccess = (dispatch, officials) => {
     type: FETCHED_OFFICIALS,
     payload: officials
   });
+  dispatch({ type: OFFICIALS_LOOKUP_SUCCESS });
   Actions.officialsList();
 };
