@@ -169,7 +169,7 @@ class AddressForm extends Component {
 
 const style = {
   buttonContainerStyle: {
-    padding: 5,
+    margin: 10,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',

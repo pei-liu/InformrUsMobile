@@ -80,7 +80,7 @@ const fetchGeocodeSuccess = (dispatch, results) => {
 };
 
 const getOfficials = (dispatch, lat, lng) => {
-  const url = `https://ixnformr.us/geolookup/${lat}&/${lng}`;
+  const url = `https://informr.us/geolookup/${lat}&/${lng}`;
   fetch(url)
     .then(response => { return response.json(); })
     .then(responseJSON => {
