@@ -36,7 +36,7 @@ export default class OfficialsHelper {
 
   formatStateOfficial(official) {
     let chamberName = '';
-    if (official.chamber === 'uper') {
+    if (official.chamber === 'upper') {
       chamberName = 'State Senate';
     } else if (official.chamber === 'lower') {
       chamberName = 'State Assembly';
@@ -75,6 +75,17 @@ export default class OfficialsHelper {
   }
 
   formatCongressOfficial(official) {
-    return official;
+    return {
+      id: official.bioguide_id,
+      firstName: official.first_name,
+      lastName: official.last_name,
+      party: official.party,
+      district: official.district,
+      photoUrl: official.photo_url,
+      chamber: official.chamber,
+      officeAddress: official.office,
+      officePhone: official.phone,
+      url: official.website
+    };
   }
 }

@@ -1,5 +1,6 @@
 import { Actions } from 'react-native-router-flux';
 
+import OfficalsHelper from '../helpers/OfficialsHelper';
 import {
   STREET_INPUT_CHANGED,
   CITY_INPUT_CHANGED,
@@ -44,7 +45,10 @@ export const clearAddressFormError = () => {
   return { type: CLEAR_ADDRESS_FORM_ERROR };
 };
 
-export const fetchOfficialsWithAddressForm = ({ streetAddressValue, cityValue, stateValue, zipCodeValue }) => {
+export const fetchOfficialsWithAddressForm = ({ streetAddressValue,
+                                                cityValue,
+                                                stateValue,
+                                                zipCodeValue }) => {
   const address = `${streetAddressValue} ${cityValue}, ${stateValue.key} ${zipCodeValue}`;
   const apiKey = 'AIzaSyAalrWHw-aemMa2n3Ou6T3isuVzeHtTBgI';
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`;
@@ -64,8 +68,7 @@ export const fetchOfficialsWithCurrentLocation = () => {
     dispatch({ type: OFFICIALS_LOOKUP_START });
     navigator.geolocation.getCurrentPosition(
       (location) => {
-        const { latitude, longitude } = location.coords;
-        getOfficials(dispatch, latitude, longitude);
+        getOfficials(dispatch, location.coords);
       },
       (error) => {
         fetchOfficialsFail(dispatch, error);
@@ -76,25 +79,25 @@ export const fetchOfficialsWithCurrentLocation = () => {
 
 const fetchGeocodeSuccess = (dispatch, results) => {
   const coords = results[0].geometry.location;
-  getOfficials(dispatch, coords.lat, coords.lng);
+  getOfficials(dispatch, coords);
 };
 
-const getOfficials = (dispatch, lat, lng) => {
-  const url = `https://informr.us/geolookup/${lat}&/${lng}`;
-  fetch(url)
-    .then(response => { return response.json(); })
-    .then(responseJSON => {
-      fetchOfficialsSuccess(dispatch, responseJSON);
-    })
-    .catch(error => {
-      fetchOfficialsFail(dispatch, error);
-    });
+const getOfficials = (dispatch, coords) => {
+  new OfficalsHelper().getOfficials(
+    dispatch,
+    coords,
+    fetchOfficialsSuccess,
+    fetchOfficialsFail
+  );
 };
 
-const fetchOfficialsSuccess = (dispatch, officials) => {
+const fetchOfficialsSuccess = (dispatch, stateOfficials, congressOfficials) => {
   dispatch({
     type: FETCHED_OFFICIALS,
-    payload: officials
+    payload: {
+      stateOfficials,
+      congressOfficials
+    }
   });
   dispatch({ type: OFFICIALS_LOOKUP_SUCCESS });
   Actions.officialsList();
