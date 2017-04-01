@@ -1,0 +1,611 @@
+[
+  {
+    "last_name": "Decker",
+    "updated_at": "2017-03-31 09:42:24",
+    "sources": [
+      {
+        "url": "https://malegislature.gov/Legislators/Profile/MCD1"
+      }
+    ],
+    "full_name": "Marjorie C. Decker",
+    "id": "MAL000451",
+    "first_name": "Marjorie C.",
+    "middle_name": "",
+    "district": "Twenty-Fifth Middlesex",
+    "state": "ma",
+    "boundary_id": "ocd-division/country:us/state:ma/sldl:25th_middlesex",
+    "all_ids": [
+      "MAL000451"
+    ],
+    "leg_id": "MAL000451",
+    "party": "Democratic",
+    "active": true,
+    "photo_url": "https://malegislature.gov/Legislators/Profile/170/MCD1.jpg",
+    "photo_file_name": "mdecker.png",
+    "roles": [
+      {
+        "term": "190",
+        "end_date": null,
+        "district": "Twenty-Fifth Middlesex",
+        "chamber": "lower",
+        "state": "ma",
+        "party": "Democratic",
+        "type": "member",
+        "start_date": null
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000116",
+        "chamber": "lower",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "House Committee on Rules",
+        "position": "vice chair",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000125",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on State Administration and Regulatory Oversight",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000135",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Elder Affairs",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000147",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Financial Services",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000164",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Rules",
+        "position": "vice chair",
+        "type": "committee member"
+      }
+    ],
+    "url": "https://malegislature.gov/Legislators/Profile/MCD1",
+    "created_at": "2017-01-09 06:44:02",
+    "chamber": "lower",
+    "offices": [
+      {
+        "fax": "617-626-0337",
+        "name": "State House",
+        "phone": "617-722-2692",
+        "address": "24 Beacon St.\nRoom 166\nBoston, MA, 02133",
+        "type": "capitol",
+        "email": "Marjorie.Decker@mahouse.gov"
+      }
+    ],
+    "suffixes": ""
+  },
+  {
+    "last_name": "Jehlen",
+    "updated_at": "2017-03-31 09:42:24",
+    "sources": [
+      {
+        "url": "https://malegislature.gov/Legislators/Profile/PDJ0"
+      }
+    ],
+    "full_name": "Patricia D. Jehlen",
+    "old_roles": {
+      "187": [
+        {
+          "term": "187",
+          "end_date": null,
+          "district": "Second Middlesex",
+          "chamber": "upper",
+          "state": "ma",
+          "party": "Democratic",
+          "type": "member",
+          "start_date": null
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000007",
+          "chamber": "upper",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Ways and Means",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000044",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Children, Families and Persons with Disabilities",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000048",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Education",
+          "position": "Senate Vice Chair",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000049",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Elder Affairs",
+          "position": "Senate Chair",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000053",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Health Care Financing",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000055",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Housing",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000056",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "The Judiciary",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "187",
+          "committee_id": "MAC000070",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Ways and Means",
+          "position": "member",
+          "type": "committee member"
+        }
+      ],
+      "188": [
+        {
+          "term": "188",
+          "end_date": null,
+          "district": "Second Middlesex",
+          "chamber": "upper",
+          "state": "ma",
+          "party": "Democratic",
+          "type": "member",
+          "start_date": null
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000083",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Housing",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000067",
+          "chamber": "upper",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Ways and Means",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000084",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "The Judiciary",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000076",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Education",
+          "position": "Senate Vice Chair",
+          "type": "committee member"
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000081",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Health Care Financing",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000097",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Ways and Means",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "188",
+          "committee_id": "MAC000077",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Elder Affairs",
+          "position": "Senate Chair",
+          "type": "committee member"
+        }
+      ],
+      "189": [
+        {
+          "term": "189",
+          "end_date": null,
+          "district": "Second Middlesex",
+          "chamber": "upper",
+          "state": "ma",
+          "party": "Democratic",
+          "type": "member",
+          "start_date": null
+        },
+        {
+          "term": "189",
+          "committee_id": "MAC000083",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Housing",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "189",
+          "committee_id": "MAC000067",
+          "chamber": "upper",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Ways and Means",
+          "position": "Assistant Vice Chair",
+          "type": "committee member"
+        },
+        {
+          "term": "189",
+          "committee_id": "MAC000077",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Elder Affairs",
+          "position": "Senate Chair",
+          "type": "committee member"
+        },
+        {
+          "term": "189",
+          "committee_id": "MAC000084",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "The Judiciary",
+          "position": "member",
+          "type": "committee member"
+        },
+        {
+          "term": "189",
+          "committee_id": "MAC000097",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Ways and Means",
+          "position": "Senate Assistant Vice Chair",
+          "type": "committee member"
+        },
+        {
+          "term": "189",
+          "committee_id": "MAC000076",
+          "chamber": "joint",
+          "state": "ma",
+          "subcommittee": null,
+          "committee": "Education",
+          "position": "Senate Vice Chair",
+          "type": "committee member"
+        }
+      ]
+    },
+    "id": "MAL000019",
+    "first_name": "Patricia",
+    "middle_name": "D.",
+    "district": "Second Middlesex",
+    "state": "ma",
+    "votesmart_id": "4820",
+    "boundary_id": "ocd-division/country:us/state:ma/sldu:2nd_middlesex",
+    "email": "Patricia.Jehlen@masenate.gov",
+    "all_ids": [
+      "MAL000019"
+    ],
+    "leg_id": "MAL000019",
+    "party": "Democratic",
+    "active": true,
+    "transparencydata_id": "3afc2fc6e5d945198239311f5d89579d",
+    "photo_url": "https://malegislature.gov/Legislators/Profile/170/PDJ0.jpg",
+    "photo_file_name": "pjehlen.jpg",
+    "roles": [
+      {
+        "term": "190",
+        "end_date": null,
+        "district": "Second Middlesex",
+        "chamber": "upper",
+        "state": "ma",
+        "party": "Democratic",
+        "type": "member",
+        "start_date": null
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000115",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Labor and Workforce Development",
+        "position": "vice chair",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000126",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Election Laws",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000131",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on the Judiciary",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000135",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Elder Affairs",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000139",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Education",
+        "position": "vice chair",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000144",
+        "chamber": "upper",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Senate Committee on Ways and Means",
+        "position": "member",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000159",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Marijuana Policy",
+        "position": "chair",
+        "type": "committee member"
+      },
+      {
+        "term": "190",
+        "committee_id": "MAC000163",
+        "chamber": "joint",
+        "state": "ma",
+        "subcommittee": null,
+        "committee": "Joint Committee on Ways and Means",
+        "position": "member",
+        "type": "committee member"
+      }
+    ],
+    "level": "state",
+    "url": "https://malegislature.gov/Legislators/Profile/PDJ0",
+    "country": "us",
+    "created_at": "2011-07-08 21:34:37",
+    "chamber": "upper",
+    "offices": [
+      {
+        "fax": "617-722-1117",
+        "name": "State House",
+        "phone": "617-722-1578",
+        "address": "24 Beacon St.\nRoom 424\nBoston, MA, 02133",
+        "type": "capitol",
+        "email": "Patricia.Jehlen@masenate.gov"
+      }
+    ],
+    "suffixes": ""
+  },
+  {
+    "bioguide_id": "C001101",
+    "birthday": "1963-07-17",
+    "chamber": "house",
+    "contact_form": null,
+    "crp_id": "N00035278",
+    "district": 5,
+    "facebook_id": "CongresswomanClark",
+    "fax": "202-226-0092",
+    "fec_ids": [
+      "H4MA05084"
+    ],
+    "first_name": "Katherine",
+    "gender": "F",
+    "govtrack_id": "412600",
+    "in_office": true,
+    "last_name": "Clark",
+    "leadership_role": null,
+    "middle_name": "M.",
+    "name_suffix": null,
+    "nickname": null,
+    "oc_email": "Rep.Katherineclark@opencongress.org",
+    "ocd_id": "ocd-division/country:us/state:ma/cd:5",
+    "office": "1415 Longworth House Office Building",
+    "party": "D",
+    "phone": "202-225-2836",
+    "state": "MA",
+    "state_name": "Massachusetts",
+    "term_end": "2019-01-03",
+    "term_start": "2017-01-03",
+    "thomas_id": "02196",
+    "title": "Rep",
+    "twitter_id": "RepKClark",
+    "votesmart_id": 35858,
+    "website": "https://katherineclark.house.gov",
+    "youtube_id": null,
+    "photo_url": "http://vote-usa.org/Image.aspx?Id=MAClarkKatherineM&Col=Headshot100&Def=Headshot100",
+    "photo_file_name": "kclark.png"
+  },
+  {
+    "bioguide_id": "W000817",
+    "birthday": "1949-06-22",
+    "chamber": "senate",
+    "contact_form": "https://www.warren.senate.gov/?p=email_senator",
+    "crp_id": "N00033492",
+    "district": null,
+    "facebook_id": "senatorelizabethwarren",
+    "fax": "202-228-2072",
+    "fec_ids": [
+      "S2MA00170"
+    ],
+    "first_name": "Elizabeth",
+    "gender": "F",
+    "govtrack_id": "412542",
+    "icpsr_id": 41301,
+    "in_office": true,
+    "last_name": "Warren",
+    "leadership_role": null,
+    "lis_id": "S366",
+    "middle_name": null,
+    "name_suffix": null,
+    "nickname": null,
+    "oc_email": "Sen.Warren@opencongress.org",
+    "ocd_id": "ocd-division/country:us/state:ma",
+    "office": "317 Hart Senate Office Building",
+    "party": "D",
+    "phone": "202-224-4543",
+    "senate_class": 1,
+    "state": "MA",
+    "state_name": "Massachusetts",
+    "state_rank": "senior",
+    "term_end": "2019-01-03",
+    "term_start": "2013-01-03",
+    "thomas_id": "02182",
+    "title": "Sen",
+    "twitter_id": "SenWarren",
+    "votesmart_id": 141272,
+    "website": "https://www.warren.senate.gov",
+    "youtube_id": "senelizabethwarren",
+    "photo_url": "http://vote-usa.org/Image.aspx?Id=MAWarrenElizabethA&Col=Headshot100&Def=Headshot100",
+    "photo_file_name": "ewarren.jpeg"
+  },
+  {
+    "bioguide_id": "M000133",
+    "birthday": "1946-07-11",
+    "chamber": "senate",
+    "contact_form": "https://www.markey.senate.gov/contact",
+    "crp_id": "N00000270",
+    "district": null,
+    "facebook_id": "EdJMarkey",
+    "fax": null,
+    "fec_ids": [
+      "H6MA07101",
+      "S4MA00028"
+    ],
+    "first_name": "Edward",
+    "gender": "M",
+    "govtrack_id": "400253",
+    "icpsr_id": 14435,
+    "in_office": true,
+    "last_name": "Markey",
+    "leadership_role": null,
+    "lis_id": "S369",
+    "middle_name": "J.",
+    "name_suffix": null,
+    "nickname": "Ed",
+    "oc_email": "Sen.Markey@opencongress.org",
+    "ocd_id": "ocd-division/country:us/state:ma",
+    "office": "255 Dirksen Senate Office Building",
+    "party": "D",
+    "phone": "202-224-2742",
+    "senate_class": 2,
+    "state": "MA",
+    "state_name": "Massachusetts",
+    "state_rank": "junior",
+    "term_end": "2021-01-03",
+    "term_start": "2015-01-06",
+    "thomas_id": "00735",
+    "title": "Sen",
+    "twitter_id": "SenMarkey",
+    "votesmart_id": 26900,
+    "website": "http://www.markey.senate.gov",
+    "youtube_id": "RepMarkey",
+    "photo_url": "http://vote-usa.org/Image.aspx?Id=MAMarkeyEdwardJ&Col=Headshot100&Def=Headshot100",
+    "photo_file_name": "emarkey.png"
+  }
+]
