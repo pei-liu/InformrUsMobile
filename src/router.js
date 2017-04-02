@@ -6,7 +6,7 @@ import AddressForm from './components/AddressForm';
 import OfficialsList from './components/OfficialsList';
 
 const RouterComponent = () => {
-  const { navBarStyle, titleStyle, sceneStyle } = styles;
+  const { navBarStyle, titleStyle, sceneStyle, officialsListSceneStyle } = styles;
   StatusBar.setBarStyle('light-content', true);
   return (
     // sceneStyle is global and applies to ALL scenes in application
@@ -17,7 +17,12 @@ const RouterComponent = () => {
     >
       <Scene key="root">
         <Scene key="addressForm" component={AddressForm} title="Address Form" initial />
-        <Scene key="officialsList" component={OfficialsList} title="Your Legislators" />
+        <Scene
+          key="officialsList"
+          component={OfficialsList}
+          title="Your Legislators"
+          sceneStyle={officialsListSceneStyle}
+        />
       </Scene>
     </Router>
   );
@@ -34,6 +39,10 @@ const styles = {
   sceneStyle: {
     marginTop: 50,
     backgroundColor: '#26517F'
+  },
+  officialsListSceneStyle: {
+    marginTop: 50,
+    backgroundColor: 'white'
   }
 };
 
