@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import OfficialsListSection from './OfficialsListSection';
@@ -33,10 +33,10 @@ class OfficialsList extends Component {
 
   render() {
     return (
-      <View style={{ marginTop: 20 }}>
+      <ScrollView style={{ marginTop: 20 }}>
         {this.renderStateOfficials()}
         {this.renderCongressOfficials()}
-      </View>
+      </ScrollView>
     );
   }
 }
