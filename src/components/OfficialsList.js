@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
-import { View, Text, ListView } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 
-import OfficialsListItem from './OfficialsListItem';
+import OfficialsListSection from './OfficialsListSection';
 
 class OfficialsList extends Component {
-  componentWillMount() {
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-
-    this.dataSource = ds.cloneWithRows(this.props.officialsList);
+  renderStateOfficials() {
+    const stateOfficials = this.props.officialsList.stateOfficials;
+    if (stateOfficials) {
+      return (
+        <OfficialsListSection
+          title='State Officials'
+          officials={stateOfficials}
+        />
+      );
+    }
+    return null;
   }
 
-  renderRow(official) {
-    return <OfficialsListItem official={official} />;
+  renderCongressOfficials() {
+    const congressOfficials = this.props.officialsList.congressOfficials;
+    if (congressOfficials) {
+      return (
+        <OfficialsListSection
+          title='Congress Reps.'
+          officials={congressOfficials}
+        />
+      );
+    }
+    return null;
   }
 
   render() {
     return (
       <View style={{ marginTop: 20 }}>
-        <ListView
-          dataSource={this.dataSource}
-          renderRow={this.renderRow}
-        />
+        {this.renderStateOfficials()}
+        {this.renderCongressOfficials()}
       </View>
     );
   }
