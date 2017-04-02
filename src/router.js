@@ -41,7 +41,7 @@ const styles = {
     backgroundColor: '#26517F'
   },
   officialsListSceneStyle: {
-    marginTop: 50,
+    marginTop: 45,
     backgroundColor: 'white'
   }
 };
