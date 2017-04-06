@@ -1,17 +1,29 @@
+import fakeData from '../assets/officialsListResponseJsonExample.json';
+
 export default class OfficialsHelper {
   getOfficials(dispatch, coords, onSuccess, onFail) {
     const { lat, lng } = coords;
     const url = `https://informr.us/geolookup/${lat}&/${lng}`;
-    fetch(url)
-      .then(response => { return response.json(); })
-      .then(responseJSON => {
-        const stateOfficials = this.extractStateOfficials(responseJSON);
-        const congressOfficials = this.extractCongressOfficials(responseJSON);
-        onSuccess(dispatch, stateOfficials, congressOfficials);
-      })
-      .catch(error => {
-        onFail(dispatch, error);
-      });
+
+    // pxl - when developing offline, use `this.useFakeData` and comment out `fetch(url)...`
+    this.useFakeData(dispatch, onSuccess);
+
+    // fetch(url)
+    //   .then(response => { return response.json(); })
+    //   .then(responseJSON => {
+    //     const stateOfficials = this.extractStateOfficials(responseJSON);
+    //     const congressOfficials = this.extractCongressOfficials(responseJSON);
+    //     onSuccess(dispatch, stateOfficials, congressOfficials);
+    //   })
+    //   .catch(error => {
+    //     onFail(dispatch, error);
+    //   });
+  }
+
+  useFakeData(dispatch, onSuccess) {
+    const stateOfficials = this.extractStateOfficials(fakeData);
+    const congressOfficials = this.extractCongressOfficials(fakeData);
+    onSuccess(dispatch, stateOfficials, congressOfficials);
   }
 
   extractStateOfficials(officials) {
@@ -65,6 +77,7 @@ export default class OfficialsHelper {
       party: official.party,
       district: official.district,
       photoUrl: official.photo_url,
+      photoFileName: official.photo_file_name, //pxl- REMOVE STUB
       chamber: chamberName,
       districtOfficeAddress,
       districtOfficePhone,
@@ -82,6 +95,7 @@ export default class OfficialsHelper {
       party: official.party,
       district: official.district,
       photoUrl: official.photo_url,
+      photoFileName: official.photo_file_name, //pxl- REMOVE STUB
       chamber: official.chamber,
       officeAddress: official.office,
       officePhone: official.phone,
