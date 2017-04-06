@@ -88,15 +88,25 @@ export default class OfficialsHelper {
   }
 
   formatCongressOfficial(official) {
+    let chamber = official.chamber;
+    chamber = chamber.charAt(0).toUpperCase() + chamber.substring(1, chamber.length);
+
+    let party = official.party;
+    if (party === 'D') {
+      party = 'Democrat';
+    } else if (party === 'R') {
+      party = 'Republican';
+    }
+
     return {
       id: official.bioguide_id,
       firstName: official.first_name,
       lastName: official.last_name,
-      party: official.party,
+      party,
       district: official.district,
       photoUrl: official.photo_url,
       photoFileName: official.photo_file_name, //pxl- REMOVE STUB
-      chamber: official.chamber,
+      chamber,
       officeAddress: official.office,
       officePhone: official.phone,
       url: official.website
