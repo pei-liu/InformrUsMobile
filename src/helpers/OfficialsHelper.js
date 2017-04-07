@@ -1,29 +1,18 @@
-import fakeData from '../assets/officialsListResponseJsonExample.json';
-
 export default class OfficialsHelper {
   getOfficials(dispatch, coords, onSuccess, onFail) {
-    const { lat, lng } = coords;
-    const url = `https://informr.us/geolookup/${lat}&/${lng}`;
+    const { latitude, longitude } = coords;
+    const url = `https://informr.us/geolookup/${latitude}&/${longitude}`;
 
-    // pxl - when developing offline, use `this.useFakeData` and comment out `fetch(url)...`
-    this.useFakeData(dispatch, onSuccess);
-
-    // fetch(url)
-    //   .then(response => { return response.json(); })
-    //   .then(responseJSON => {
-    //     const stateOfficials = this.extractStateOfficials(responseJSON);
-    //     const congressOfficials = this.extractCongressOfficials(responseJSON);
-    //     onSuccess(dispatch, stateOfficials, congressOfficials);
-    //   })
-    //   .catch(error => {
-    //     onFail(dispatch, error);
-    //   });
-  }
-
-  useFakeData(dispatch, onSuccess) {
-    const stateOfficials = this.extractStateOfficials(fakeData);
-    const congressOfficials = this.extractCongressOfficials(fakeData);
-    onSuccess(dispatch, stateOfficials, congressOfficials);
+    fetch(url)
+      .then(response => { return response.json(); })
+      .then(responseJSON => {
+        const stateOfficials = this.extractStateOfficials(responseJSON);
+        const congressOfficials = this.extractCongressOfficials(responseJSON);
+        onSuccess(dispatch, stateOfficials, congressOfficials);
+      })
+      .catch(error => {
+        onFail(dispatch, error);
+      });
   }
 
   extractStateOfficials(officials) {

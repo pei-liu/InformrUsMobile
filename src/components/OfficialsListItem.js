@@ -10,7 +10,6 @@ export default (props) => {
     party,
     district,
     photoUrl,
-    photoFileName, // pxl- REMOVE STUB
     chamber,
     officeAddress,
     officePhone,
@@ -20,9 +19,6 @@ export default (props) => {
     capitolOfficePhone,
     url
   } = props.official;
-
-  // When developing with access to internet just use 'photoUrl'
-  const photo = requireLocalImage(photoFileName);
 
   const {
     imageContainerStyle,
@@ -35,7 +31,7 @@ export default (props) => {
     <Card>
       <CardSection>
         <View style={imageContainerStyle}>
-          <Image source={photo} style={imageStyle} />
+          <Image source={{ uri: photoUrl }} style={imageStyle} />
         </View>
         <View style={infoContainerStyle}>
           <Text style={infoHeaderStyle}>{`${firstName} ${lastName}`}</Text>
@@ -72,7 +68,7 @@ const style = {
     color: '#26517F',
     fontFamily: 'Enriqueta',
     paddingBottom: 3,
-    textDecorationLine:'underline'
+    textDecorationLine: 'underline'
   },
   infoCategoryNameStyle: {
     fontWeight: 'bold',
@@ -89,20 +85,3 @@ function renderField(categoryName, categoryVal) {
     );
   }
 }
-
-// pxl - temp method for require local images when developing offline.
-function requireLocalImage(photoFileName) {
-  // react-native doesn't allow dynamically generating paths for passing into 'require'
-  switch (photoFileName) {
-  case 'emarkey.png':
-    return require('../assets/images/emarkey.png');
-  case 'ewarren.jpeg':
-    return require('../assets/images/ewarren.jpeg');
-  case 'kclark.png':
-    return require('../assets/images/kclark.png');
-  case 'mdecker.png':
-    return require('../assets/images/mdecker.png');
-  case 'pjehlen.jpg':
-    return require('../assets/images/pjehlen.jpg');
-  }
-};
