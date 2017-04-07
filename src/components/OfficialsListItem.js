@@ -5,7 +5,6 @@ import { Card, CardSection } from './common';
 
 export default (props) => {
   const {
-    id,
     firstName,
     lastName,
     party,
@@ -30,7 +29,6 @@ export default (props) => {
     infoContainerStyle,
     imageStyle,
     infoHeaderStyle,
-    infoCategoryNameStyle
   } = style;
 
   return (
@@ -62,6 +60,7 @@ const style = {
     paddingRight: 10
   },
   infoContainerStyle: {
+    flex: 1
   },
   imageStyle: {
     width: 100,
