@@ -41,15 +41,11 @@ export default (props) => {
         </View>
         <View style={infoContainerStyle}>
           <Text style={infoHeaderStyle}>{`${firstName} ${lastName}`}</Text>
-          <Text>
-            <Text style={infoCategoryNameStyle}>Party: </Text>
-            {party}
-          </Text>
-          <Text>
-            <Text style={infoCategoryNameStyle}>Chamber: </Text>
-            {chamber}
-          </Text>
-          { renderDistrict(district) }
+          { renderField('Party', party)}
+          { renderField('Chamber', chamber) }
+          { renderField('District', district) }
+          { renderField('Office Address', officeAddress) }
+          { renderField('Office Phone', officePhone) }
         </View>
       </CardSection>
     </Card>
@@ -77,12 +73,12 @@ const style = {
   }
 };
 
-function renderDistrict(district) {
-  if (district) {
+function renderField(categoryName, categoryVal) {
+  if (categoryVal) {
     return (
       <Text>
-        <Text style={style.infoCategoryNameStyle}>District: </Text>
-        {district}
+        <Text style={style.infoCategoryNameStyle}>{categoryName}: </Text>
+        {categoryVal}
       </Text>
     );
   }
