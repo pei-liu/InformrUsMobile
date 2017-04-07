@@ -46,6 +46,11 @@ export default (props) => {
           { renderField('District', district) }
           { renderField('Office Address', officeAddress) }
           { renderField('Office Phone', officePhone) }
+          { renderField('District Office Address', districtOfficeAddress)}
+          { renderField('District Office Phone', districtOfficePhone)}
+          { renderField('Capitol Office Address', capitolOfficeAddress) }
+          { renderField('Capitol Office Phone', capitolOfficePhone) }
+          { renderField('URL', url) }
         </View>
       </CardSection>
     </Card>
