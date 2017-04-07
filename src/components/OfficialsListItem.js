@@ -48,7 +48,7 @@ export default (props) => {
           { renderField('District Office Phone', districtOfficePhone)}
           { renderField('Capitol Office Address', capitolOfficeAddress) }
           { renderField('Capitol Office Phone', capitolOfficePhone) }
-          { renderField('URL', url) }
+          { renderField('Website', url) }
         </View>
       </CardSection>
     </Card>
@@ -70,7 +70,9 @@ const style = {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#26517F',
-    fontFamily: 'Enriqueta'
+    fontFamily: 'Enriqueta',
+    paddingBottom: 3,
+    textDecorationLine:'underline'
   },
   infoCategoryNameStyle: {
     fontWeight: 'bold',
