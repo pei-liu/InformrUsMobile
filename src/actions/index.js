@@ -78,7 +78,10 @@ export const fetchOfficialsWithCurrentLocation = () => {
 };
 
 const fetchGeocodeSuccess = (dispatch, results) => {
-  const coords = results[0].geometry.location;
+  const coords = {
+    latitude: results[0].geometry.location.lat,
+    longitude: results[0].geometry.location.lng
+  };
   getOfficials(dispatch, coords);
 };
 

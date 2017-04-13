@@ -2,7 +2,6 @@ export default class OfficialsHelper {
   getOfficials(dispatch, coords, onSuccess, onFail) {
     const { latitude, longitude } = coords;
     const url = `https://informr.us/geolookup/${latitude}&/${longitude}`;
-
     fetch(url)
       .then(response => { return response.json(); })
       .then(responseJSON => {
