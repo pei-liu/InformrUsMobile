@@ -10,24 +10,24 @@ import {
 } from '../actions/types';
 import statesList from '../UsStates.json';
 
-// const INITIAL_STATE = {
-//   statesList,
-//   streetAddressValue: '',
-//   cityValue: '',
-//   stateValue: '',
-//   zipCodeValue: '',
-//   isLoading: false,
-//   errorMessage: '',
-// };
-
-// Prefill address fields for DEVELOPMENT
 const INITIAL_STATE = {
   statesList,
-  streetAddressValue: '31 Winslow St',
-  cityValue: 'Cambridge',
-  stateValue: { label: 'Massachusetts', key: 'MA' },
-  zipCodeValue: '02138',
+  streetAddressValue: '',
+  cityValue: '',
+  stateValue: '',
+  zipCodeValue: '',
+  isLoading: false,
+  errorMessage: '',
 };
+
+// Prefill address fields for DEVELOPMENT
+// const INITIAL_STATE = {
+//   statesList,
+//   streetAddressValue: '31 Winslow St',
+//   cityValue: 'Cambridge',
+//   stateValue: { label: 'Massachusetts', key: 'MA' },
+//   zipCodeValue: '02138',
+// };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
